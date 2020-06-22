@@ -1,5 +1,5 @@
 name: 'Hexo Action'
-description: 'Hexo CI/CD action for automating deployment.'
+description: 'Hexo CI/CD action for automating deployment. deploy to github pages and coding pages'
 author: 'sma11black'
 inputs:
   user_name:
@@ -12,6 +12,10 @@ inputs:
     default: '41898282+github-actions[bot]@users.noreply.github.com'
   deploy_key:
     description: 'The deploy key for Github Pages repo'
+    required: true
+    default: ''
+  deploy_key_coding:
+    description: 'The deploy key for Coding Pages repo'
     required: true
     default: ''
   commit_msg:
@@ -28,6 +32,7 @@ runs:
     - ${{ inputs.user_name }}
     - ${{ inputs.user_email }}
     - ${{ inputs.deploy_key }}
+    - ${{ inputs.deploy_key_coding }}
 branding:
   icon: 'package'  
   color: 'blue'
