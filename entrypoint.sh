@@ -41,7 +41,7 @@ npm install hexo-deployer-git --save
 
 git clone https://github.com/$GITHUB_ACTOR/$GITHUB_ACTOR.github.io.git .deploy_git
 
-npm install
+npm install hexo-renderer-scss
 
 # deployment
 if [ "$INPUT_COMMIT_MSG" == "" ]
