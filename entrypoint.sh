@@ -11,6 +11,7 @@ chmod 600 /root/.ssh/id_rsa
 ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
 ssh-keyscan -t rsa e.coding.net >> /root/.ssh/known_hosts
 
+# you can change here to router domain with defferent key with you need
 cat << EOF > /root/.ssh/config
 Host github.com  
     HostName github.com  
@@ -25,7 +26,7 @@ Host $GITHUB_ACTOR.github.com
 Host e.coding.net  
     HostName e.coding.net  
     PreferredAuthentications publickey  
-    IdentityFile /root/.ssh/coding_rsa 
+    IdentityFile /root/.ssh/id_rsa 
 EOF
 
 chmod 600 /root/.ssh/config
