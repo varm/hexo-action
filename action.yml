@@ -14,10 +14,6 @@ inputs:
     description: 'The deploy key for Github Pages repo'
     required: true
     default: ''
-  deploy_key_coding:
-    description: 'The deploy key for Coding Pages repo'
-    required: true
-    default: ''
   commit_msg:
     description: 'Git commit messages to your GitHub Pages repository.'
     required: false
@@ -32,7 +28,6 @@ runs:
     - ${{ inputs.user_name }}
     - ${{ inputs.user_email }}
     - ${{ inputs.deploy_key }}
-    - ${{ inputs.deploy_key_coding }}
 branding:
   icon: 'package'  
   color: 'blue'
