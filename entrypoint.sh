@@ -41,6 +41,7 @@ npm install hexo-deployer-git --save
 
 git clone https://github.com/$GITHUB_ACTOR/$GITHUB_ACTOR.github.io.git .deploy_git
 
+npm remove node-sass hexo-renderer-scss
 npm install hexo-renderer-scss
 
 # deployment
