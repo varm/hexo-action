@@ -12,7 +12,9 @@ COPY entrypoint.sh /entrypoint.sh
 #     chmod +x /entrypoint.sh
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git openssh-client \
+    && apt-get install -y --no-install-recommends curl git openssh-client \
+    && curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash \
+    && apt install node \
     && rm -rf /var/lib/apt/lists/* \
     && chmod +x /entrypoint.sh
 
