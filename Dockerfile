@@ -15,6 +15,8 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends curl git openssh-client \
     && curl -sL https://deb.nodesource.com/setup_13.x | bash - \
     && apt install -y nodejs npm \
+    && node --version \
+    && nodejs --version \
     && rm -rf /var/lib/apt/lists/* \
     && chmod +x /entrypoint.sh
 
