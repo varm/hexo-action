@@ -13,7 +13,7 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends apt-utils git openssh-client \
-    && apt install nodejs npm \
+    && apt install -y nodejs npm \
     && rm -rf /var/lib/apt/lists/* \
     && chmod +x /entrypoint.sh
 
