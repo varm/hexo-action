@@ -27,6 +27,11 @@ Host e.coding.net
     HostName e.coding.net  
     PreferredAuthentications publickey  
     IdentityFile /root/.ssh/id_rsa 
+
+Host $GITHUB_ACTOR.coding.net  
+    HostName e.coding.net  
+    PreferredAuthentications publickey  
+    IdentityFile /root/.ssh/id_rsa 
 EOF
 
 chmod 600 /root/.ssh/config
