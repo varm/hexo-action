@@ -14,6 +14,7 @@ COPY entrypoint.sh /entrypoint.sh
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl git openssh-client \
     && curl -sL https://deb.nodesource.com/setup_13.x | bash - \
+    && apt update \
     && apt install -y nodejs npm \
     && node --version \
     && nodejs --version \
