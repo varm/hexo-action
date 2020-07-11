@@ -1,3 +1,8 @@
+# features 
+
+* support deploy hexo to github pages and coding pages 
+* support multiple github account
+
 # GitHub Action - Hexo CI/CD 🌱
 
 <a href="https://github.com/marketplace/actions/hexo-action"><img alt="View Action" src="https://img.shields.io/badge/action-marketplace-blue.svg?logo=github&color=orange"></a>
