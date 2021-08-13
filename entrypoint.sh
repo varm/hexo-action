@@ -54,8 +54,10 @@ echo 'have clone .deploy_git'
 hexo clean
 if [ "$INPUT_COMMIT_MSG" == "" ]
 then
+    hexo g
     hexo g -d
 else
+    hexo g
     hexo g -d -m "$INPUT_COMMIT_MSG"
 fi
 
