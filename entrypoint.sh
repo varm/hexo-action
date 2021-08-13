@@ -51,6 +51,7 @@ echo 'have clone .deploy_git'
 # npm install hexo-renderer-scss
 
 # deployment
+hexo clean
 if [ "$INPUT_COMMIT_MSG" == "" ]
 then
     hexo g -d
