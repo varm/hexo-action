@@ -43,6 +43,7 @@ git config --global user.email "$INPUT_USER_EMAIL"
 # install hexo env
 npm install hexo-cli -g
 npm install hexo-deployer-git --save
+npm install gulp-cli -g
 
 git clone https://github.com/$GITHUB_ACTOR/$GITHUB_ACTOR.github.io.git .deploy_git
 echo 'have clone .deploy_git'
@@ -53,9 +54,21 @@ echo 'have clone .deploy_git'
 # deployment
 if [ "$INPUT_COMMIT_MSG" == "" ]
 then
-    hexo g -d
+    hexo clean
+    hexo generate
+    if [ -n "$INPUT_GULP" ] &&  [ "$INPUT_GULP" = "true" ]
+    then
+      gulp
+    fi
+    hexo deploy
 else
-    hexo g -d -m "$INPUT_COMMIT_MSG"
+    hexo clean
+    hexo generate
+    if [ -n "$INPUT_GULP" ] &&  [ "$INPUT_GULP" = "true" ]
+    then
+      gulp
+    fi
+    hexo deploy -m "$INPUT_COMMIT_MSG"
 fi
 
 echo ::set-output name=notify::"Deploy complate."

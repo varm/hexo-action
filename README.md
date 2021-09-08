@@ -2,6 +2,7 @@
 
 * support deploy hexo to github pages and coding pages 
 * support multiple github account
+* support gulp to minimal Hexo website
 
 # GitHub Action - Hexo CI/CD 🌱
 
@@ -34,6 +35,7 @@ For more information on these inputs, see the [API Documentation](https://develo
 | `user_name` | NO | The user name of your github account for deploying. | `github-actions[bot]` |
 | `user_email` | NO | The user email of your github account for deploying. | `41898282+github-actions[bot]@users.noreply.github.com`[<sup>1</sup>](#refer-anchor-1) |
 | `deploy_key` | **YES** | The **deploy key** to access your **GitHub Pages repository**. | `null` |
+| `gulp` | NO | Run gulp command or not, true or false. | `false` |
 | `commit_msg` | NO | Git commit messages for your GitHub Pages repository. | `null` |
 
 <div id="refer-anchor-1"></div>
@@ -88,6 +90,7 @@ jobs:
         deploy_key: ${{ secrets.DEPLOY_KEY }}
         user_name: your github username  # (or delete this input setting to use bot account)
         user_email: your github useremail  # (or delete this input setting to use bot account)
+        gulp: 'true' # When true to run the gulp command ,and when false will not run the gulp command
         commit_msg: ${{ github.event.head_commit.message }}  # (or delete this input setting to use hexo default settings)
     # Use the output from the `deploy` step(use for test action)
     - name: Get the output
