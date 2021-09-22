@@ -57,6 +57,7 @@ if [ "$INPUT_COMMIT_MSG" == "" ]
 then
     hexo clean
     hexo generate
+    hexo generate
     if [ -n "$INPUT_GULP" ] &&  [ "$INPUT_GULP" = "true" ]
     then
       gulp
@@ -64,6 +65,7 @@ then
     hexo deploy
 else
     hexo clean
+    hexo generate
     hexo generate
     if [ -n "$INPUT_GULP" ] &&  [ "$INPUT_GULP" = "true" ]
     then
