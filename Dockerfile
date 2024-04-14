@@ -1,4 +1,4 @@
-FROM node:13-alpine
+FROM node:20
 # FROM ubuntu:18.04
 
 LABEL version="1.0.0"
