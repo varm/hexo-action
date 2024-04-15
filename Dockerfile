@@ -1,4 +1,9 @@
-FROM node:13-alpine
+FROM node: 18-alpine
+#16-alpine
+# FROM node: 16-alpine
+#14-alpine
+# FROM node: 14-alpine
+#13-alpine
 # FROM ubuntu:18.04
 
 LABEL version="1.0.0"
